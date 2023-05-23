@@ -1,0 +1,159 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Inter:wght@300;400&family=Montserrat:wght@500&family=Sen&display=swap');
+.navbar{
+
+  padding-left: 132px;
+  padding-top:20px;
+}
+
+.custombtn{
+
+  width:643px ;
+  height: 54px;
+  border: 1px solid rgba(1, 0, 53, 0.2);
+  border-radius: 12px;
+  display: flex;
+
+}
+
+.img2{
+  position: relative;
+    top: 1px;
+    right: 6px;
+}
+
+
+.custom-file-input {
+  color: transparent;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  width: 20%;
+  background: #4440FF;
+
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: '';
+  background:url('./assets/Vector.png');
+  color: black;
+  display: inline-block;
+
+  border: 1px solid #999;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  height: 100%;
+  width: 100%;
+  font-size: 10pt;
+  
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
+
+
+.simple{
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border: none;
+  padding: 10px;
+  width: 80%;
+
+}
+
+
+.mainbody{
+  padding:2% 20%;
+  column-gap: 91px;
+}
+
+.upload{
+  background: rgba(68, 64, 255, 0.2);
+border-radius: 12px;
+width: 169.02px;
+height: 52px;
+border:none;
+margin-top: 20px;
+color: #4440FF;
+}
+
+.preview{
+  width: 183px;
+height: 126px;
+background-color: #999;
+border-radius: 12px;
+}
+
+.flex{
+  display: flex;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.justify-center{
+  justify-content: center;
+}
+table {
+  font-family: 'Montserrat';
+
+  border-collapse: collapse;
+  width: 70%;
+}
+
+td, th {
+ 
+  text-align: center;
+  padding: 8px;
+}
+
+table>tr{
+  background: rgba(68, 64, 255, 0.15);
+backdrop-filter: blur(3px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 12px 12px 0px 0px;
+width: 832px;
+height: 75px;
+
+}
+
+
+table tbody{
+  background-color: #fff;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.listof{
+  width: 70%;
+  text-align: left;
+}

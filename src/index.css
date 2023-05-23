@@ -1,0 +1,11 @@
+
+body{
+  margin:0;
+}
+
+.container{
+  background: linear-gradient(180deg, #FFFFFF 42.68%, #D7D7FF 164.16%);
+  background-size: contain;
+  height: 100vh;
+  width: 100vw;
+}
