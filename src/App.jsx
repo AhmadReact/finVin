@@ -5,6 +5,8 @@ import './App.css'
 import img from './assets/logo.png'
 import img2 from './assets/Group.png'
 import CustomInput from './components/customInput/CustomInput'
+import { classifierApi } from './service/service'
+import { getheader } from './service/getHeader'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,20 +15,26 @@ function App() {
   
   const upload = async () =>{
 
+    
     const date=new Date();
     var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("X-Amz-Content-Sha256", "beaead3198f7da1e70d03ab969765e0821b24fc913697e929e726aeaebf0eba3");
-    myHeaders.append("X-Amz-Date", "20230522T124213Z");
-    myHeaders.append("Authorization", "AWS4-HMAC-SHA256 Credential=AKIA4LBKETVWEYHNZK5C/20230522/us-east-1/sagemaker/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-content-sha256;x-amz-date, Signature=6ebe13ee9abcef2d6091087bb4674276dea31a3fb8f3f3b32799c6ee6a879f0e");
-    const raw = JSON.stringify({
-      "image": base64
-    });
+    const jsonToSend = {};
+    const transcript = "Hi, thank you for .";
+    jsonToSend['image'] = transcript;
+    const json = JSON.stringify(jsonToSend)
+    const header = getheader(json);
+    console.log(header);
+    myHeaders.append("Content-Type", header['content-type']);
+   
+    myHeaders.append("X-Amz-Date", header['x-amz-date']);
+    myHeaders.append("Authorization", header.Authorization);
+    myHeaders.append("X-Amz-Content-Sha256",header['x-amz-content-sha256'])
+ 
     
     const requestOptions = {
       method: 'POST',
       headers: myHeaders,
-      body: raw,
+      body: json,
       redirect: 'follow'
     };
     
@@ -39,8 +47,22 @@ function App() {
     }
     
 
+
+
+
+
   }
 
+  
+  const checkapi = () =>{
+
+    
+
+    classifierApi(JSON.stringify({
+      "image":base64
+      })).then()
+      
+  }
 
 
 
